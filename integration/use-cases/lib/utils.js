@@ -58,6 +58,9 @@ module.exports = {
         timeout: 10000,
       });
       await page.click("#submit-login");
+      await expect(page).toClick("button", {
+        text: "Grant Access",
+      });
       await page.waitForSelector(".kubeapps-header-content", {
         visible: true,
         timeout: 10000,
